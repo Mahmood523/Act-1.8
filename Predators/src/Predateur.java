@@ -1,11 +1,11 @@
 
 public abstract class Predateur implements PredateurAction {
-	public String sexe ;
-	public CategorieAge categorieAge;
-	public int force;
-	public GroupeSolitaire groupeSolitaire;
-	public Nourriture nourriture;
-	public Son son ;
+	private String sexe ;
+	private CategorieAge categorieAge;
+	private int force;
+	private GroupeSolitaire groupeSolitaire;
+	private Nourriture nourriture;
+	private Son son ;
 	
 	
 	enum GroupeSolitaire {groupe ,solitaire };

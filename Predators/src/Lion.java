@@ -1,9 +1,12 @@
+import java.io.InputStream;
+import java.util.Scanner;
 
 public class Lion extends Predateur implements LionAction {
-	public Domination domination;
-	public Rang rang;
-	public int impetuosite;
-	
+	private Domination domination;
+	private Rang rang;
+	private int impetuosite;
+	private int typeRugir;
+	private Scanner scanner = new Scanner( System.in);
 	
 	enum Domination {dominant ,nonDominant };
 	enum Rang {ALPHA,BETA,GAMA,OMEGA }
@@ -19,57 +22,100 @@ public class Lion extends Predateur implements LionAction {
 		this.impetuosite = impetuosite;
 	}
 
+	
+	
 	@Override
 	public void seNourrir() {
-		// TODO Auto-generated method stub
-		super.seNourrir();
+		super.setNourriture (Nourriture.viande);
+	
 	}
 
 	@Override
 	public void chasser() {
-		// TODO Auto-generated method stub
-		super.chasser();
+		
+		super.setGroupeSolitaire (GroupeSolitaire.groupe);
 	}
 
 	@Override
 	public void courir() {
-		// TODO Auto-generated method stub
+		
 		super.courir();
 	}
 
 	@Override
 	public void seReproduire() {
-		// TODO Auto-generated method stub
+		
 		super.seReproduire();
 	}
 
 	@Override
 	public void emettreSon() {
-		// TODO Auto-generated method stub
-		super.emettreSon();
+		
+		super.setSon (Son.rugit);
+		
+		switch (typeRugir)
+		{
+		case 1 :
+			System.out.println("Veuillez saisir un nombre:");
+			typeRugir = scanner.nextInt();
+			
+			if (typeRugir==1)
+				System.out.println("Exprimer l’appartenance à un groupe");
+			break;
+		
+		case 2 :
+			System.out.println("Veuillez saisir un nombre:");
+			typeRugir = scanner.nextInt();
+			
+			if (typeRugir==2)
+				System.out.println("Exprimer la domination");
+			break;
+			
+		case 3 :
+			System.out.println("Veuillez saisir un nombre:");
+			typeRugir = scanner.nextInt();
+			
+			if (typeRugir==3)
+				System.out.println("Exprimer la soumission");
+			break;
+			
+		case 4 :
+			System.out.println("Veuillez saisir un nombre:");
+			typeRugir = scanner.nextInt();
+			
+			if (typeRugir==4)
+				System.out.println("Exprimer l’agressivite");
+			break;
+			
+		}
+		while (  typeRugir < 5 );
+			
+		
 	}
 	
+	
+
 	@Override
 	public void afficheCaract() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void rugir() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void entendreSon() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void seSeparer() {
-		// TODO Auto-generated method stub
+		
 		
 		
 		

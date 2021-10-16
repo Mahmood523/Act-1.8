@@ -1,8 +1,11 @@
+import java.util.Scanner;
 
 public class Ours extends Predateur implements OursAction {
-      public int factAgressivite;
-      public int puissance;
-      public boolean hivernation;
+	private int factAgressivite;
+	private int puissance;
+	private boolean hivernation;
+	private int typeHurler;
+	private Scanner scanner = new Scanner( System.in);
 	
       public Ours() {
 		super();
@@ -17,62 +20,99 @@ public class Ours extends Predateur implements OursAction {
 
 	@Override
 	public void afficheCaract() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void grimper() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void creuser() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void hiverner() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void hurler() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
 	@Override
 	public void seNourrir() {
-		// TODO Auto-generated method stub
-		super.seNourrir();
+		
+		super.setNourriture (Nourriture.omnivore);
 	}
 
 	@Override
 	public void chasser() {
-		// TODO Auto-generated method stub
-		super.chasser();
+		
+		super.setGroupeSolitaire (GroupeSolitaire.solitaire);
 	}
 
 	@Override
 	public void courir() {
-		// TODO Auto-generated method stub
+		
 		super.courir();
 	}
 
 	@Override
 	public void seReproduire() {
-		// TODO Auto-generated method stub
+		
 		super.seReproduire();
 	}
 
 	@Override
 	public void emettreSon() {
-		// TODO Auto-generated method stub
-		super.emettreSon();
+		
+		super.setSon (Son.hurle);
+		
+		switch (typeHurler)
+		{
+		case 1 :
+			System.out.println("Veuillez saisir un nombre:");
+			typeHurler = scanner.nextInt();
+			
+			if (typeHurler==1)
+				System.out.println("Exprimer la peur");
+			break;
+		
+		case 2 :
+			System.out.println("Veuillez saisir un nombre:");
+			typeHurler = scanner.nextInt();
+			
+			if (typeHurler==2)
+				System.out.println("Exprimer sa presence");
+			break;
+			
+		case 3 :
+			System.out.println("Veuillez saisir un nombre:");
+			typeHurler = scanner.nextInt();
+			
+			if (typeHurler==3)
+				System.out.println("Effrayer un autre predateur");
+			break;
+			
+		case 4 :
+			System.out.println("Veuillez saisir un nombre:");
+			typeHurler = scanner.nextInt();
+			
+			if (typeHurler==4)
+				System.out.println("Exprimer l’agressivite");
+			break;
+			
+		}
+		while ( typeHurler < 5);
 	}
 
 	public int getFactAgressivite() {
