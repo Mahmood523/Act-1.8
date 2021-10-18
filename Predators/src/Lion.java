@@ -25,7 +25,18 @@ public class Lion extends Predateur implements LionAction {
 	}
 
 	
-	
+
+	public Lion(String sexe, Predateur.CategorieAge categorieAge, int force,Predateur.GroupeSolitaire groupeSolitaire) {
+		super(sexe, categorieAge, force, groupeSolitaire);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Lion(String sexe, Predateur.CategorieAge categorieAge, int force,Predateur.GroupeSolitaire groupeSolitaire,Lion.Domination domination, Lion.Rang rang, int impetuosite) {
+		super(sexe, categorieAge, force, groupeSolitaire); 
+		Lion.domination = domination;
+		this.rang = rang;
+		this.impetuosite = impetuosite;
+	}
 	@Override
 	public void seNourrir() {
 		super.setNourriture (Nourriture.viande);

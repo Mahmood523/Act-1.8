@@ -1,14 +1,13 @@
 
 public class GroupeLion extends GroupePredateur implements GroupePredateurAction, GroupeLionAction {
 	
-	private Lion[] couple = new Lion[1];
+	private static Lion[] couple = new Lion[2];
 	private int puissanceGroupe ;
 	private Lion[] groupeLions ;
-	private boolean femelle ;
-	private boolean maleDom ;
-	private boolean coupleDom ;
-	private String testFem = new String();
-	private Lion.Domination testMale ;
+	private static boolean femelle =false ;
+	private static boolean maleDom= false ;
+	private static String testFem = new String();
+	private static Lion.Domination testMale ;
 	
 	
 	
@@ -22,30 +21,32 @@ public class GroupeLion extends GroupePredateur implements GroupePredateurAction
 
 	public GroupeLion(Lion[] couple, int puissanceGroupe) {
 		super();
-		this.couple = couple;
+		GroupeLion.couple = couple;
 		this.puissanceGroupe = puissanceGroupe;
 	}
 
 
 
 	@Override
-	public void makeCouple() {
+	public void makeCouple( Lion[] couple) {
 	    testFem = Lion.getSexe (couple[0]);
 	    testMale = Lion.getDomination(couple[1]);
 	    
+	    
 	    if	( testFem == "feminin" )
-		
-			femelle = true ;
+		      femelle = true ;
 		
 		
 		
 		if ( testMale == Lion.Domination.dominant)
-			maleDom =true;
+			 maleDom =true;
 				
 		
 		if ((femelle == true) && (maleDom == true))
-           coupleDom = true ;
-		else makeCouple();
+           
+		     System.out.println("Couple Dominant");
+		else 
+			 System.out.println("Couple NonDominant");
 
 	}
 
@@ -75,14 +76,14 @@ public class GroupeLion extends GroupePredateur implements GroupePredateurAction
 
 
 
-	public Lion[] getCouple() {
+	public static Lion[] getCouple() {
 		return couple;
 	}
 
 
 
 	public void setCouple(Lion[] couple) {
-		this.couple = couple;
+		GroupeLion.couple = couple;
 	}
 	
 	
@@ -119,7 +120,7 @@ public class GroupeLion extends GroupePredateur implements GroupePredateurAction
 
 
 	public void setFemelle(boolean femelle) {
-		this.femelle = femelle;
+		GroupeLion.femelle = femelle;
 	}
 
 
@@ -131,20 +132,12 @@ public class GroupeLion extends GroupePredateur implements GroupePredateurAction
 
 
 	public void setMaleDom(boolean maleDom) {
-		this.maleDom = maleDom;
+		GroupeLion.maleDom = maleDom;
 	}
 
 
 
-	public boolean isCoupleDom() {
-		return coupleDom;
-	}
-
-
-
-	public void setCoupleDom(boolean coupleDom) {
-		this.coupleDom = coupleDom;
-	}
+	
 
     
 
