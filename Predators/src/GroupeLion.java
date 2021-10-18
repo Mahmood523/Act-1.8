@@ -4,6 +4,13 @@ public class GroupeLion extends GroupePredateur implements GroupePredateurAction
 	private Lion[] couple = new Lion[1];
 	private int puissanceGroupe ;
 	private Lion[] groupeLions ;
+	private boolean femelle ;
+	private boolean maleDom ;
+	private boolean coupleDom ;
+	private String testFem = new String();
+	private Lion.Domination testMale ;
+	
+	
 	
 	
 
@@ -23,7 +30,22 @@ public class GroupeLion extends GroupePredateur implements GroupePredateurAction
 
 	@Override
 	public void makeCouple() {
+	    testFem = Lion.getSexe (couple[0]);
+	    testMale = Lion.getDomination(couple[1]);
+	    
+	    if	( testFem == "feminin" )
 		
+			femelle = true ;
+		
+		
+		
+		if ( testMale == Lion.Domination.dominant)
+			maleDom =true;
+				
+		
+		if ((femelle == true) && (maleDom == true))
+           coupleDom = true ;
+		else makeCouple();
 
 	}
 
@@ -89,6 +111,42 @@ public class GroupeLion extends GroupePredateur implements GroupePredateurAction
 	}
 
 
+
+	public boolean isFemelle() {
+		return femelle;
+	}
+
+
+
+	public void setFemelle(boolean femelle) {
+		this.femelle = femelle;
+	}
+
+
+
+	public boolean isMaleDom() {
+		return maleDom;
+	}
+
+
+
+	public void setMaleDom(boolean maleDom) {
+		this.maleDom = maleDom;
+	}
+
+
+
+	public boolean isCoupleDom() {
+		return coupleDom;
+	}
+
+
+
+	public void setCoupleDom(boolean coupleDom) {
+		this.coupleDom = coupleDom;
+	}
+
+    
 
 	
 	

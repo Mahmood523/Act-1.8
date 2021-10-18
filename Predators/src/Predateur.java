@@ -1,6 +1,6 @@
 
 public abstract class Predateur implements PredateurAction {
-	private String sexe ;
+	private static String sexe ;
 	private CategorieAge categorieAge;
 	private int force;
 	private GroupeSolitaire groupeSolitaire;
@@ -22,7 +22,7 @@ public abstract class Predateur implements PredateurAction {
 	
 	public Predateur(String sexe, Predateur.CategorieAge categorieAge, int force,
 			Predateur.GroupeSolitaire groupeSolitaire) {
-		this.sexe = sexe;
+		Predateur.sexe = sexe;
 		this.categorieAge = categorieAge;
 		this.force = force;
 		this.groupeSolitaire = groupeSolitaire;
@@ -60,13 +60,13 @@ public abstract class Predateur implements PredateurAction {
 	}
 
 
-	public String getSexe() {
+	public static String getSexe(Lion l1) {
 		return sexe;
 	}
 
 
 	public void setSexe(String sexe) {
-		this.sexe = sexe;
+		Predateur.sexe = sexe;
 	}
 
 

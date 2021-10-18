@@ -1,12 +1,14 @@
-import java.io.InputStream;
+
 import java.util.Scanner;
 
 public class Lion extends Predateur implements LionAction {
-	private Domination domination;
+	private static Domination domination;
 	private Rang rang;
 	private int impetuosite;
 	private int typeRugir;
 	private Scanner scanner = new Scanner( System.in);
+	
+	
 	
 	enum Domination {dominant ,nonDominant };
 	enum Rang {ALPHA,BETA,GAMA,OMEGA }
@@ -17,7 +19,7 @@ public class Lion extends Predateur implements LionAction {
 
 	public Lion(Lion.Domination domination, Lion.Rang rang, int impetuosite) {
 		super();
-		this.domination = domination;
+		Lion.domination = domination;
 		this.rang = rang;
 		this.impetuosite = impetuosite;
 	}
@@ -121,12 +123,12 @@ public class Lion extends Predateur implements LionAction {
 		
 	}
 
-	public Domination getDomination() {
+	public static  Domination getDomination(Lion l1) {
 		return domination;
 	}
 
 	public void setDomination(Domination domination) {
-		this.domination = domination;
+		Lion.domination = domination;
 	}
 
 	public Rang getRang() {
@@ -143,6 +145,78 @@ public class Lion extends Predateur implements LionAction {
 
 	public void setImpetuosite(int impetuosite) {
 		this.impetuosite = impetuosite;
+	}
+
+	
+	public static String getSexe(Lion l1) {
+		
+		return getSexe(l1);
+	}
+
+	@Override
+	public void setSexe(String sexe) {
+		// TODO Auto-generated method stub
+		super.setSexe(sexe);
+	}
+
+	@Override
+	public Predateur.CategorieAge getCategorieAge() {
+		// TODO Auto-generated method stub
+		return super.getCategorieAge();
+	}
+
+	@Override
+	public void setCategorieAge(Predateur.CategorieAge categorieAge) {
+		// TODO Auto-generated method stub
+		super.setCategorieAge(categorieAge);
+	}
+
+	@Override
+	public int getForce() {
+		// TODO Auto-generated method stub
+		return super.getForce();
+	}
+
+	@Override
+	public void setForce(int force) {
+		// TODO Auto-generated method stub
+		super.setForce(force);
+	}
+
+	@Override
+	public Predateur.GroupeSolitaire getGroupeSolitaire() {
+		// TODO Auto-generated method stub
+		return super.getGroupeSolitaire();
+	}
+
+	@Override
+	public void setGroupeSolitaire(Predateur.GroupeSolitaire groupeSolitaire) {
+		// TODO Auto-generated method stub
+		super.setGroupeSolitaire(groupeSolitaire);
+	}
+
+	@Override
+	public Predateur.Nourriture getNourriture() {
+		// TODO Auto-generated method stub
+		return super.getNourriture();
+	}
+
+	@Override
+	public void setNourriture(Predateur.Nourriture nourriture) {
+		// TODO Auto-generated method stub
+		super.setNourriture(nourriture);
+	}
+
+	@Override
+	public Predateur.Son getSon() {
+		// TODO Auto-generated method stub
+		return super.getSon();
+	}
+
+	@Override
+	public void setSon(Predateur.Son son) {
+		// TODO Auto-generated method stub
+		super.setSon(son);
 	};
 	
 	
